@@ -38,6 +38,32 @@ function forgive() {
     // Ocultar el popup
     document.getElementById('popup').style.display = 'none';
     
+    // Reemplazar el div del corazón con la imagen real
+    const sorryImg = document.getElementById('sorryImg');
+    sorryImg.innerHTML = ''; // Limpiar el contenido actual
+    sorryImg.style.display = 'flex';
+    sorryImg.style.justifyContent = 'center';
+    sorryImg.style.alignItems = 'center';
+    sorryImg.style.height = 'auto';
+    sorryImg.style.backgroundColor = 'transparent';
+    sorryImg.style.padding = '10px 0';
+    
+    // Crear y añadir la imagen
+    const img = document.createElement('img');
+    img.src = 'imagen.jpg';
+    img.alt = 'Imagen de disculpa';
+    img.style.width = '60%'; // Reducir el ancho al 60%
+    img.style.margin = '0 auto'; // Centrar la imagen
+    img.style.borderRadius = '10px';
+    img.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 1s ease-in-out';
+    sorryImg.appendChild(img);
+    
+    // Forzar un reflow para activar la transición
+    void img.offsetWidth;
+    img.style.opacity = '1';
+    
     // Mostrar mensaje de agradecimiento
     const thankYou = document.createElement('div');
     thankYou.classList.add('thanks-message');
@@ -63,16 +89,19 @@ function createHearts() {
             
             // Posición inicial aleatoria
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.top = -20 + 'px';
+            heart.style.top = '0';
             
             // Tamaño aleatorio
-            const size = Math.random() * 15 + 10;
+            const size = Math.random() * 20 + 15; // Corazones más grandes
             heart.style.width = size + 'px';
             heart.style.height = size + 'px';
             
             // Velocidad aleatoria
-            const duration = Math.random() * 3 + 2;
+            const duration = Math.random() * 5 + 3; // Más lentos para ser más visibles
             heart.style.animationDuration = duration + 's';
+            
+            // Configurar la opacidad inicial a 1
+            heart.style.opacity = '1';
             
             hearts.appendChild(heart);
             
@@ -85,5 +114,4 @@ function createHearts() {
     }
 }
 
-// Reemplazar la imagen de placeholder con una imagen de disculpa
-document.getElementById('sorryImg').src = 'https://api.placeholder.com/400/320';
+
