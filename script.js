@@ -41,7 +41,7 @@ function forgive() {
     // Mostrar mensaje de agradecimiento
     const thankYou = document.createElement('div');
     thankYou.classList.add('thanks-message');
-    thankYou.textContent = '¡Gracias por perdonarme! ❤️';
+    thankYou.textContent = '¡Te amo! ❤️';
     document.querySelector('.card').appendChild(thankYou);
     thankYou.style.display = 'block';
     
