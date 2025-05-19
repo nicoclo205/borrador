@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disculpas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="card" id="mainCard">
+        <h1>Lo siento mucho</h1>
+        <div class="img-container">
+            <img src="https://api.placeholder.com/400/320" alt="Imagen de disculpa" id="sorryImg">
+            <div class="shine"></div>
+        </div>
+        <p>Sé que cometí un error y quiero que sepas que estoy realmente arrepentida. Tu perdón significa mucho para mí. ¿Podemos arreglarlo?</p>
+    </div>
+    
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>¿Me perdonas?</h2>
+            <div class="buttons">
+                <button class="yes-btn" onclick="forgive()">Sí</button>
+                <button class="no-btn" id="noBtn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
